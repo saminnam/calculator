@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <script src="https://kit.fontawesome.com/5016e33784.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="calculator-box">
+           <div class="row">
+            <div class="cell-1">
+                <div class="cell-w100">
+                    <h1>CASIO</h1>
+                </div>
+                <div class="cell-1">
+                    <h2>12 Digit</h2>
+                </div>
+            </div>
+           </div>
+            <div class="display-box">
+                <div class="row">
+                    <div class="cell-w300">
+                        <input type="text" class="display" id="result">
+                    </div>
+                    <div class="cell-1">
+                        <button class="clear-btn" onclick="input('')">Ac</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell-1">
+                    <ul class="number-list">
+                        <li><button onclick="input('7')">7</button></li>
+                        <li><button onclick="input('4')">4</button></li>
+                        <li><button onclick="input('1')">1</button></li>
+                        <li><button onclick="input('0')">0</button></li>
+                    </ul>
+                    <ul class="number-list">
+                        <li><button onclick="input('8')">8</button></li>
+                        <li><button onclick="input('5')">5</button></li>
+                        <li><button onclick="input('2')">2</button></li>
+                        <li><button onclick="input('.')">.</button></li>
+                    </ul>
+                    <ul class="number-list">
+                        <li><button onclick="input('9')">9</button></li>
+                        <li><button onclick="input('6')">6</button></li>
+                        <li><button onclick="input('3')">3</button></li>
+                        <li><button onclick="input('+')"><i class="fa-solid fa-plus"></i></button></li>
+                    </ul>
+                    <ul class="number-list">
+                        <li><button onclick="input('/')"><i class="fa-solid fa-divide"></i></button></li>
+                        <li><button onclick="input('*')"><i class="fa-solid fa-x"></i></button></li>
+                        <li><button onclick="input('-')"><i class="fa-solid fa-minus"></i></button></li>
+                        <li><button onclick="solve('=')"><i class="fa-solid fa-equals"></i></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function input(value) {
+            var a= value;
+            if (a) {
+                document.getElementById("result").value +=a
+            } else {
+                document.getElementById("result").value ="";
+            }
+        }
+        function solve() {
+            let x= document.getElementById("result").value
+            let result = eval(x);
+            document.getElementById("result").value=result
+        }
+    </script>
+</body>
+</html>
